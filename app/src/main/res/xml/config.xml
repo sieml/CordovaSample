@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?><!--
+http://www.th7.cn/Program/Android/201507/500935.shtml
+为你的项目添加CordovaLib依赖
+copy的前端代码www目录到assets目录下，注意cordova.js要是android平台的实现
+copy config.xml 到 res/xml目录下
+copy一份CordovaInterfaceImpl实现到你activity所在的包（这里是为了尽量的少改动，其实你也可以自己实现CordovaInterface）
+修改你的activity，因为修改内容较多，下面单列出来-->
+<widget
+    id="io.cordova.test"
+    version="2.0.0">
+    <!--<content src="http://test.mileslife.com:8000/products/list_products/" />-->
+    <content src="http://www.mileslife.com/staticpage/products/localproducts.html?city=上海" />
+    <access origin="*" />
+    <access origin="http://127.0.0.1:*" />
+    <allow-navigation href="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference
+        name="loglevel"
+        value="DEBUG" />
+    <preference
+        name="webviewbounce"
+        value="false" />
+    <preference
+        name="UIWebViewBounce"
+        value="false" />
+    <preference
+        name="DisallowOverscroll"
+        value="true" />
+    <preference
+        name="BackupWebStorage"
+        value="none" />
+    <preference
+        name="LoadUrlTimeoutValue"
+        value="10000" />
+    <feature name="myplugin">
+        <param name="android-package" value="com.lee.cordovawebview.ActivityPlugin"/>
+        <param name="onload" value="true"/>
+    </feature>
+</widget>
